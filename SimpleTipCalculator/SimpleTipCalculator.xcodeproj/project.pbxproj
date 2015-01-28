@@ -411,6 +411,7 @@
 				2732BD661A78347D007D24D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2732BD671A78347D007D24D2 /* Build configuration list for PBXNativeTarget "SimpleTipCalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +420,7 @@
 				2732BD691A78347D007D24D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
