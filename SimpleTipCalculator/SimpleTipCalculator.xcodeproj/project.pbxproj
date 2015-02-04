@@ -14,6 +14,7 @@
 		2732BD551A78347D007D24D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2732BD531A78347D007D24D2 /* LaunchScreen.xib */; };
 		2732BD611A78347D007D24D2 /* SimpleTipCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732BD601A78347D007D24D2 /* SimpleTipCalculatorTests.swift */; };
 		2732BD6B1A783992007D24D2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732BD6A1A783992007D24D2 /* MainViewController.swift */; };
+		27B647451A815B55003067C3 /* mario.wav in Resources */ = {isa = PBXBuildFile; fileRef = 27B647441A815B55003067C3 /* mario.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		2732BD5F1A78347D007D24D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2732BD601A78347D007D24D2 /* SimpleTipCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTipCalculatorTests.swift; sourceTree = "<group>"; };
 		2732BD6A1A783992007D24D2 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		27B647441A815B55003067C3 /* mario.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = mario.wav; path = ../../../../../../Downloads/mario.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		2732BD451A78347D007D24D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				27B647441A815B55003067C3 /* mario.wav */,
 				2732BD461A78347D007D24D2 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -198,6 +201,7 @@
 				2732BD501A78347D007D24D2 /* Main.storyboard in Resources */,
 				2732BD551A78347D007D24D2 /* LaunchScreen.xib in Resources */,
 				2732BD521A78347D007D24D2 /* Images.xcassets in Resources */,
+				27B647451A815B55003067C3 /* mario.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MainViewController: UIViewController {
 
@@ -52,6 +53,21 @@ class MainViewController: UIViewController {
         toolbar.setItems(barButtonItems, animated: false);
         
         totalTextField.inputAccessoryView = toolbar;
+        
+        /*
+        *  Play Mario Sound
+        */
+        
+        var alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("mario", ofType: "wav")!)
+        println(alertSound)
+        
+        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
+        AVAudioSession.sharedInstance().setActive(true, error: nil)
+        
+        var error:NSError?
+        var audioPlayer = AVAudioPlayer(contentsOfURL: alertSound, error: &error)
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,6 +100,7 @@ class MainViewController: UIViewController {
     }
     
     func resignKeyboard() {
+        
         /*
          *  Resigns the keyboard from view
          */
