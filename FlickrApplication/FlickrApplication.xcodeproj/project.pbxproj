@@ -16,6 +16,7 @@
 		27F43E201A81E14800B94BAE /* FlickrApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F43E1F1A81E14800B94BAE /* FlickrApplicationTests.swift */; };
 		27F43E2A1A81E25300B94BAE /* FACollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F43E291A81E25300B94BAE /* FACollectionViewController.swift */; };
 		27F43E2C1A81E37D00B94BAE /* FlickrSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F43E2B1A81E37D00B94BAE /* FlickrSearcher.swift */; };
+		27F43E2E1A81E6DC00B94BAE /* FACollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F43E2D1A81E6DC00B94BAE /* FACollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		27F43E1F1A81E14800B94BAE /* FlickrApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrApplicationTests.swift; sourceTree = "<group>"; };
 		27F43E291A81E25300B94BAE /* FACollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FACollectionViewController.swift; sourceTree = "<group>"; };
 		27F43E2B1A81E37D00B94BAE /* FlickrSearcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrSearcher.swift; sourceTree = "<group>"; };
+		27F43E2D1A81E6DC00B94BAE /* FACollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FACollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				27F43E081A81E14800B94BAE /* FlickrApplication.xcdatamodeld */,
 				27F43E041A81E14800B94BAE /* Supporting Files */,
 				27F43E291A81E25300B94BAE /* FACollectionViewController.swift */,
+				27F43E2D1A81E6DC00B94BAE /* FACollectionViewCell.swift */,
 			);
 			path = FlickrApplication;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				27F43E071A81E14800B94BAE /* AppDelegate.swift in Sources */,
 				27F43E2A1A81E25300B94BAE /* FACollectionViewController.swift in Sources */,
 				27F43E0A1A81E14800B94BAE /* FlickrApplication.xcdatamodeld in Sources */,
+				27F43E2E1A81E6DC00B94BAE /* FACollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
