@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "27F43E001A81E14800B94BAE"
+               BlueprintIdentifier = "27F596561A8302D4007485DF"
                BuildableName = "FlickrApplication.app"
                BlueprintName = "FlickrApplication"
                ReferencedContainer = "container:FlickrApplication.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "27F43E181A81E14800B94BAE"
+               BlueprintIdentifier = "27F5966E1A8302D5007485DF"
                BuildableName = "FlickrApplicationTests.xctest"
                BlueprintName = "FlickrApplicationTests"
                ReferencedContainer = "container:FlickrApplication.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "27F43E181A81E14800B94BAE"
+               BlueprintIdentifier = "27F5966E1A8302D5007485DF"
                BuildableName = "FlickrApplicationTests.xctest"
                BlueprintName = "FlickrApplicationTests"
                ReferencedContainer = "container:FlickrApplication.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "27F43E001A81E14800B94BAE"
+            BlueprintIdentifier = "27F596561A8302D4007485DF"
             BuildableName = "FlickrApplication.app"
             BlueprintName = "FlickrApplication"
             ReferencedContainer = "container:FlickrApplication.xcodeproj">
@@ -75,7 +75,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "27F43E001A81E14800B94BAE"
+            BlueprintIdentifier = "27F596561A8302D4007485DF"
             BuildableName = "FlickrApplication.app"
             BlueprintName = "FlickrApplication"
             ReferencedContainer = "container:FlickrApplication.xcodeproj">
@@ -93,7 +93,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "27F43E001A81E14800B94BAE"
+            BlueprintIdentifier = "27F596561A8302D4007485DF"
             BuildableName = "FlickrApplication.app"
             BlueprintName = "FlickrApplication"
             ReferencedContainer = "container:FlickrApplication.xcodeproj">

@@ -2,7 +2,7 @@
 //  FlickrApplicationTests.swift
 //  FlickrApplicationTests
 //
-//  Created by Clay McLeod on 2/3/15.
+//  Created by Clay McLeod on 2/4/15.
 //  Copyright (c) 2015 Clay McLeod. All rights reserved.
 //
 
