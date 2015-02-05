@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		275860071A83CE4500B620FA /* FACollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275860061A83CE4500B620FA /* FACollectionViewCell.swift */; };
+		275860091A83D56D00B620FA /* FAHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275860081A83D56D00B620FA /* FAHeaderCollectionReusableView.swift */; };
+		2758600B1A83D98300B620FA /* FAUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2758600A1A83D98300B620FA /* FAUtilities.swift */; };
 		27F5965D1A8302D4007485DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F5965C1A8302D4007485DF /* AppDelegate.swift */; };
 		27F596601A8302D4007485DF /* FlickrApplication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27F5965E1A8302D4007485DF /* FlickrApplication.xcdatamodeld */; };
 		27F596651A8302D4007485DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F596631A8302D4007485DF /* Main.storyboard */; };
@@ -28,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		275860061A83CE4500B620FA /* FACollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FACollectionViewCell.swift; sourceTree = "<group>"; };
+		275860081A83D56D00B620FA /* FAHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FAHeaderCollectionReusableView.swift; path = ../FAHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		2758600A1A83D98300B620FA /* FAUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAUtilities.swift; sourceTree = "<group>"; };
 		27F596571A8302D4007485DF /* FlickrApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F5965B1A8302D4007485DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27F5965C1A8302D4007485DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 		27F596591A8302D4007485DF /* FlickrApplication */ = {
 			isa = PBXGroup;
 			children = (
+				275860081A83D56D00B620FA /* FAHeaderCollectionReusableView.swift */,
 				27F5965C1A8302D4007485DF /* AppDelegate.swift */,
 				27F596631A8302D4007485DF /* Main.storyboard */,
 				27F596661A8302D4007485DF /* Images.xcassets */,
@@ -89,6 +96,8 @@
 				27F5965A1A8302D4007485DF /* Supporting Files */,
 				27F596851A832891007485DF /* FAFlickrSearchCollectionViewController.swift */,
 				27F596871A832D7B007485DF /* FlickrSearcher.swift */,
+				275860061A83CE4500B620FA /* FACollectionViewCell.swift */,
+				2758600A1A83D98300B620FA /* FAUtilities.swift */,
 			);
 			path = FlickrApplication;
 			sourceTree = "<group>";
@@ -218,10 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				275860071A83CE4500B620FA /* FACollectionViewCell.swift in Sources */,
+				2758600B1A83D98300B620FA /* FAUtilities.swift in Sources */,
 				27F5965D1A8302D4007485DF /* AppDelegate.swift in Sources */,
 				27F596601A8302D4007485DF /* FlickrApplication.xcdatamodeld in Sources */,
 				27F596861A832891007485DF /* FAFlickrSearchCollectionViewController.swift in Sources */,
 				27F596881A832D7B007485DF /* FlickrSearcher.swift in Sources */,
+				275860091A83D56D00B620FA /* FAHeaderCollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +427,7 @@
 				27F5967B1A8302D5007485DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27F5967C1A8302D5007485DF /* Build configuration list for PBXNativeTarget "FlickrApplicationTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +436,7 @@
 				27F5967E1A8302D5007485DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

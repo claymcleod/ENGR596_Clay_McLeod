@@ -8,87 +8,100 @@
 
 import UIKit
 
-let reuseIdentifier = "Cell"
-
-class FAFlickrSearchCollectionViewController: UICollectionViewController {
-
+class FAFlickrSearchCollectionViewController: UICollectionViewController, UITextFieldDelegate, UICollectionViewDelegateFlowLayout {
+    
+    private let flickr = Flickr()
+    private var titles = [NSString]()
+    private let reuseIdentifier = "FlickrCell"
+    private var searches = [FlickrSearchResults]()
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+        //self.navigationController?.navigationBar.barTintColor = FLICKR_APPLICATION_NAVBAR_THEME_COLOR
+    }
+    
+    func photoForIndexPath(indexPath: NSIndexPath) -> FlickrPhoto {
+        return searches[indexPath.section].searchResults[indexPath.row]
+    }
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        
+        textField.addSubview(activityIndicator)
+        
+        activityIndicator.frame = CGRect(x: textField.bounds.width-activityIndicator.bounds.width-5, y: textField.bounds.height-activityIndicator.bounds.height-5, width: activityIndicator.bounds.width, height: activityIndicator.bounds.height)
+        
+        activityIndicator.startAnimating()
+        self.titles.append(textField.text)
+        NSLog(self.titles.description);
+        flickr.searchFlickrForTerm(textField.text) {
+            results, error in
+            
+            activityIndicator.removeFromSuperview()
+            if error != nil {
+                println("Error searching : \(error)")
+            }
+            
+            if results != nil {
+                self.searches.append(results!)
+                self.collectionView?.reloadData()
+            }
+        }
+        
+        textField.text = nil
+        textField.resignFirstResponder()
+        return true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
+    
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        //#warning Incomplete method implementation -- Return the number of sections
-        return 0
+        return searches.count
     }
-
-
+    
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //#warning Incomplete method implementation -- Return the number of items in the section
-        return 0
+        return searches[section].searchResults.count
     }
-
+    
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
-    
-        // Configure the cell
-    
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as FACollectionViewCell
+        let flickrPhoto = photoForIndexPath(indexPath)
+        cell.backgroundColor = UIColor.blackColor()
+        cell.imageView.image = flickrPhoto.thumbnail
+        
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
     
+    func collectionView(collectionView: UICollectionView!,
+        layout collectionViewLayout: UICollectionViewLayout!,
+        sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
+            
+            let flickrPhoto =  photoForIndexPath(indexPath)
+            if var size = flickrPhoto.thumbnail?.size {
+                size.width += 10
+                size.height += 10
+                return size
+            }
+            return CGSize(width: 100, height: 100)
     }
-    */
-
+    
+    private let sectionInsets = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 20.0, right: 00.0)
+    
+    func collectionView(collectionView: UICollectionView!,
+        layout collectionViewLayout: UICollectionViewLayout!,
+        insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+            return sectionInsets
+    }
+    
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        var reusableView : UICollectionReusableView? = nil
+        
+        if (kind == UICollectionElementKindSectionHeader) {
+            let headerView : FAHeaderCollectionReusableView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "HeaderView", forIndexPath: indexPath) as FAHeaderCollectionReusableView
+            
+            headerView.title.text = titles[indexPath.section]
+            reusableView = headerView
+        }
+        
+        return reusableView!
+    }
 }
