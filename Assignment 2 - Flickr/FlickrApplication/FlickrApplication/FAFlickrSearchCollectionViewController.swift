@@ -83,7 +83,7 @@ class FAFlickrSearchCollectionViewController: UICollectionViewController, UIText
             return baseSize
     }
     
-    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 25.0, bottom: 10.0, right: 25.0)
+    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 0.0, bottom: 10.0, right: 0.0)
     
     func collectionView(collectionView: UICollectionView!,
         layout collectionViewLayout: UICollectionViewLayout!,

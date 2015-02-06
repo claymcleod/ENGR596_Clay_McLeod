@@ -125,6 +125,7 @@ class Flickr {
             
             let flickrPhotos : [FlickrPhoto] = photosReceived.map {
                 photoDictionary in
+                NSLog(photoDictionary.description)
                 
                 let title = photoDictionary["title"] as? String ?? ""
                 let photoID = photoDictionary["id"] as? String ?? ""
