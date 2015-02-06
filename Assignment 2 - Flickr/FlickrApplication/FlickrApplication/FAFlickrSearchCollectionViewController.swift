@@ -17,6 +17,7 @@ class FAFlickrSearchCollectionViewController: UICollectionViewController, UIText
     
     override func viewDidLoad() {
         //self.navigationController?.navigationBar.barTintColor = FLICKR_APPLICATION_NAVBAR_THEME_COLOR
+        //self.collectionView?.collectionViewLayout.invalidateLayout()
     }
     
     func photoForIndexPath(indexPath: NSIndexPath) -> FlickrPhoto {
@@ -33,10 +34,11 @@ class FAFlickrSearchCollectionViewController: UICollectionViewController, UIText
         
         activityIndicator.startAnimating()
         self.titles.append(textField.text)
-        NSLog(self.titles.description);
+        let timeBefore : NSDate = NSDate()
         flickr.searchFlickrForTerm(textField.text) {
             results, error in
-            
+            let timeAfter:NSDate = NSDate()
+            NSLog("Time to complete query for \(self.titles.last? as NSString!) is \(timeAfter.timeIntervalSinceDate(timeBefore)) seconds")
             activityIndicator.removeFromSuperview()
             if error != nil {
                 println("Error searching : \(error)")
@@ -64,9 +66,9 @@ class FAFlickrSearchCollectionViewController: UICollectionViewController, UIText
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as FACollectionViewCell
         let flickrPhoto = photoForIndexPath(indexPath)
-        cell.backgroundColor = UIColor.blackColor()
         cell.imageView.image = flickrPhoto.thumbnail
-        
+        cell.titleLabel.text = flickrPhoto.title
+        cell.descriptionLabel.text = "[Description] PhotoID: \(flickrPhoto.photoID), Secret: \(flickrPhoto.secret)"
         return cell
     }
     
@@ -75,15 +77,13 @@ class FAFlickrSearchCollectionViewController: UICollectionViewController, UIText
         sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize {
             
             let flickrPhoto =  photoForIndexPath(indexPath)
-            if var size = flickrPhoto.thumbnail?.size {
-                size.width += 10
-                size.height += 10
-                return size
-            }
-            return CGSize(width: 100, height: 100)
+            var baseSize: CGSize = flickrPhoto.sizeToFillWidthOfSize(collectionView.frame.size)
+            
+            baseSize.height += 50
+            return baseSize
     }
     
-    private let sectionInsets = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 20.0, right: 00.0)
+    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 25.0, bottom: 10.0, right: 25.0)
     
     func collectionView(collectionView: UICollectionView!,
         layout collectionViewLayout: UICollectionViewLayout!,
@@ -104,4 +104,11 @@ class FAFlickrSearchCollectionViewController: UICollectionViewController, UIText
         
         return reusableView!
     }
+    
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+            return 50
+    }
+    
 }

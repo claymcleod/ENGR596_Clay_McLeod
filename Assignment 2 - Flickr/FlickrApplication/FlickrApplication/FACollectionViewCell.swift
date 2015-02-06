@@ -10,5 +10,7 @@ import UIKit
 
 class FACollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
 }

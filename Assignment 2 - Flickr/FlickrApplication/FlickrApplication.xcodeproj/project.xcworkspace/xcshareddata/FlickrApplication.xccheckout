@@ -14,11 +14,11 @@
 		<string>bitbucket.org:claymcleod/engr596_clay_mcleod.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>FlickrApplication/FlickrApplication.xcodeproj</string>
+	<string>Assignment 2 - Flickr/FlickrApplication/FlickrApplication.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A7F86AB5291C1A14169BBE5A6A7E5EA791B776EA</key>
-		<string>../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>bitbucket.org:claymcleod/engr596_clay_mcleod.git</string>
