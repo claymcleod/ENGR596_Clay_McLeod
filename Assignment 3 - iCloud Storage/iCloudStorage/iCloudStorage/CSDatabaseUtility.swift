@@ -73,7 +73,7 @@ class CSDatabaseUtility: NSObject {
     
     func queryPublicDatabaseForName(recordType: NSString, name: NSString) {
         
-        // Predicate formatting guide: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Predicates/Articles/pSyntax.html#//apple_ref/doc/uid/TP40001795
+        // Predicate formatting guide: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Predicates/AdditionalChapters/Introduction.html
         
         let predicate = NSPredicate(format: "Name = %@", name)
         let query = CKQuery(recordType: recordType, predicate: predicate)
