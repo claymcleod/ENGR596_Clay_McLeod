@@ -17,15 +17,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var container = CKContainer.defaultContainer()
-        
-        
-        container.accountStatusWithCompletionHandler({status, error in
-            if (error != nil) { NSLog("Error = \(error.description)")}
-            
-            NSLog("Account status = \(status.hashValue) (0=CouldNotDetermine/1=Available/2=Restricted/3=NoAccount)")
-        })
-        
         publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
         privateDatabase = CKContainer.defaultContainer().privateCloudDatabase
         
@@ -51,22 +42,28 @@ class ViewController: UIViewController {
         
         let partyReference : CKReference = CKReference(record: partyRecord, action: .None)
         barRecord.setObject(partyReference, forKey: "Party")
+
+        /*
+
+        // Saving records to database
         
-        //publicDatabase?.saveRecord(partyRecord, completionHandler: { (record, error) -> Void in
-        //    if (error != nil) {
-        //        println("Error: \(error.localizedDescription)")
-        //    } else {
-        //        println("Success for partyRecord!")
-        //    }
-        //})
+        publicDatabase?.saveRecord(partyRecord, completionHandler: { (record, error) -> Void in
+            if (error != nil) {
+                println("Error: \(error.localizedDescription)")
+            } else {
+                println("Success for partyRecord!")
+            }
+        })
         
-        privateDatabase?.saveRecord(barRecord, completionHandler: { (record, error) -> Void in
+        publicDatabase?.saveRecord(barRecord, completionHandler: { (record, error) -> Void in
             if (error != nil) {
                 println("Error: \(error.localizedDescription)")
             } else {
                 println("Success for barRecord!")
             }
         })
+
+        */
         
     }
 

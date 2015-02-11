@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CloudKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        var container = CKContainer.defaultContainer()
+        
+        container.accountStatusWithCompletionHandler({status, error in
+            if (error != nil) { NSLog("Error = \(error.description)")}
+            
+            if (status == CKAccountStatus.NoAccount) {
+                println("[iCloud] No user account enrolled in iCloud")
+            } else if(status == CKAccountStatus.CouldNotDetermine) {
+                println("[iCloud] Could not determine account status: \(error.localizedDescription)")
+            } else if(status == CKAccountStatus.Restricted) {
+                println("[iCloud] Restricted account access")
+            } else if(status == CKAccountStatus.Available) {
+                println("[iCloud] iCloud account is available")
+            } else {
+                println("Unknown option for CKAccountStatus: \(status)")
+            }
+        })
+        
         return true
     }
 
