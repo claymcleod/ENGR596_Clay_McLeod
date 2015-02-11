@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27106F121A8BF51B00669CAC /* CSDatabaseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27106F111A8BF51B00669CAC /* CSDatabaseUtility.swift */; };
 		27DA47291A8BD5F3006AA8A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DA47281A8BD5F3006AA8A6 /* AppDelegate.swift */; };
 		27DA472C1A8BD5F3006AA8A6 /* iCloudStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27DA472A1A8BD5F3006AA8A6 /* iCloudStorage.xcdatamodeld */; };
 		27DA472E1A8BD5F3006AA8A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DA472D1A8BD5F3006AA8A6 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27106F111A8BF51B00669CAC /* CSDatabaseUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSDatabaseUtility.swift; sourceTree = "<group>"; };
 		27DA47231A8BD5F3006AA8A6 /* iCloudStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCloudStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27DA47271A8BD5F3006AA8A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27DA47281A8BD5F3006AA8A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				27DA47341A8BD5F3006AA8A6 /* LaunchScreen.xib */,
 				27DA472A1A8BD5F3006AA8A6 /* iCloudStorage.xcdatamodeld */,
 				27DA47261A8BD5F3006AA8A6 /* Supporting Files */,
+				27106F111A8BF51B00669CAC /* CSDatabaseUtility.swift */,
 			);
 			path = iCloudStorage;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27DA472E1A8BD5F3006AA8A6 /* ViewController.swift in Sources */,
+				27106F121A8BF51B00669CAC /* CSDatabaseUtility.swift in Sources */,
 				27DA47291A8BD5F3006AA8A6 /* AppDelegate.swift in Sources */,
 				27DA472C1A8BD5F3006AA8A6 /* iCloudStorage.xcdatamodeld in Sources */,
 			);
@@ -431,6 +435,7 @@
 				27DA47471A8BD5F3006AA8A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27DA47481A8BD5F3006AA8A6 /* Build configuration list for PBXNativeTarget "iCloudStorageTests" */ = {
 			isa = XCConfigurationList;
@@ -439,6 +444,7 @@
 				27DA474A1A8BD5F3006AA8A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
