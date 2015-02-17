@@ -76,11 +76,35 @@ class CSDatabaseUtility: NSObject {
         // Predicate formatting guide: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Predicates/AdditionalChapters/Introduction.html
         
         let predicate = NSPredicate(format: "Name = %@", name)
-        let query = CKQuery(recordType: recordType, predicate: predicate)
+        let query = CKQuery(recordType: recordType as! String, predicate: predicate)
         
         publicDatabase?.performQuery(query, inZoneWithID: nil, completionHandler: { (results, error) -> Void in
             println("[DatabaseUtility] Found \(results.count) results.")
-            println("  |\n   --> Predicate: \(predicate?.description)\n")
+            println("  |\n   --> Predicate: \(predicate.description)\n")
         })
+    }
+    
+    func createSubscriptionForParty() {
+        
+        // Create a predicate that looks for parties in the future.
+        
+        let predicate : NSPredicate = NSPredicate(format: "TRUEPREDICATE");
+        var subscription : CKSubscription = CKSubscription(recordType: "Party", predicate: predicate, options: CKSubscriptionOptions.FiresOnRecordCreation);
+        var notificationInfo : CKNotificationInfo = CKNotificationInfo();
+        notificationInfo.alertLocalizationKey = "creationAlertBodyKey"
+        notificationInfo.shouldBadge = false
+        notificationInfo.desiredKeys = ["Description"]
+        notificationInfo.alertActionLocalizationKey = "creationAlertActionKey"
+        
+        subscription.notificationInfo = notificationInfo;
+        
+        publicDatabase?.saveSubscription(subscription, completionHandler: { (subscription, error) -> Void in
+            
+            if (error != nil) {
+                println("[DatabaseUtility] Could not save subscription!");
+            } else {
+                println("[DatabaseUtility] Successfully saved subscription!");
+            }
+        });
     }
 }

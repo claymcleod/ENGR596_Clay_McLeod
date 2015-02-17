@@ -35,9 +35,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         })
         
+        let notificationTypes:UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
+        let notificationSettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
+        
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        
         return true
     }
 
+    func application(didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings!) {
+        if UIApplication.sharedApplication().isRegisteredForRemoteNotifications() == false{
+            println("Not registered for push notifications. Registering now...")
+            UIApplication.sharedApplication().registerForRemoteNotifications()
+        } else {
+            println("Already registered.");
+        }
+        
+    }
+    
+    func application(didFailToRegisterForRemoteNotificationsWithError error: NSError!) {
+        println(error.localizedDescription)
+    }
+    
+    func application(application: UIApplication,
+        didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+            
+            println("A new record is generated and we received a push")
+            
+            let notification = CKNotification(
+                fromRemoteNotificationDictionary: userInfo)
+            
+            if let query = notification as? CKQueryNotification{
+                let recordID = query.notificationID;
+                println("Record ID that triggered push: %@", recordID);
+                
+            }
+            
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -67,7 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "edu.olemiss.claymcleod.iCloudStorage" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        return urls[urls.count-1] as NSURL
+        return urls[urls.count-1] as! NSURL
     }()
 
     lazy var managedObjectModel: NSManagedObjectModel = {
@@ -90,10 +125,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
             dict[NSUnderlyingErrorKey] = error
-            error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
-            // Replace this with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog("Unresolved error \(error), \(error!.userInfo)")
             abort()
         }
         

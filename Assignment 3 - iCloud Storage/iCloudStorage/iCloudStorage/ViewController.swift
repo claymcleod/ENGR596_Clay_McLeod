@@ -22,15 +22,27 @@ class ViewController: UIViewController {
         /*
         
         // Sample item creation
+        
         databaseUtility.saveSampleItemsToPublicDatabase()
         
         */
         
-        
+        /*
 
         // Querying the database
+        
         databaseUtility.queryPublicDatabaseForName("Bar", name: "Corner Bar")
         databaseUtility.queryPublicDatabaseForName("Bar", name: "Funkys")
+
+        */
+        
+        /*
+        
+        // Create part subscription
+        
+        databaseUtility.createSubscriptionForParty();
+        
+        */
         
     }
 
