@@ -19,22 +19,22 @@ class ViewController: UIViewController {
         
         let databaseUtility : CSDatabaseUtility = CSDatabaseUtility.sharedDatabaseUtility()
         
-        /*
+        
         
         // Sample item creation
         
+        /*
         databaseUtility.saveSampleItemsToPublicDatabase()
-        
         */
         
-        /*
+    
 
         // Querying the database
-        
+        /*
         databaseUtility.queryPublicDatabaseForName("Bar", name: "Corner Bar")
         databaseUtility.queryPublicDatabaseForName("Bar", name: "Funkys")
-
         */
+        
         
         /*
         
