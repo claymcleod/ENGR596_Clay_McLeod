@@ -409,6 +409,7 @@
 				27EA8C301A964C60000E951B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27EA8C311A964C60000E951B /* Build configuration list for PBXNativeTarget "DynamicKitExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				27EA8C331A964C60000E951B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
