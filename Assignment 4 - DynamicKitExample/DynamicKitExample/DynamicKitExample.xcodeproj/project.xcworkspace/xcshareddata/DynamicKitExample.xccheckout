@@ -14,11 +14,11 @@
 		<string>github.com:claymcleod/ENGR596_Clay_McLeod.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Assignment 4 - DynamicKitExample/DynamicKitExample.xcodeproj</string>
+	<string>Assignment 4 - DynamicKitExample/DynamicKitExample/DynamicKitExample.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A7F86AB5291C1A14169BBE5A6A7E5EA791B776EA</key>
-		<string>../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:claymcleod/ENGR596_Clay_McLeod.git</string>
