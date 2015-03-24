@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0620"
+   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "27017E431AC1C283005AC0B2"
+               BlueprintIdentifier = "27DE38911AC1C72A001ABB01"
                BuildableName = "Maps.app"
                BlueprintName = "Maps"
                ReferencedContainer = "container:Maps.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "27017E581AC1C283005AC0B2"
+               BlueprintIdentifier = "27DE38A61AC1C72A001ABB01"
                BuildableName = "MapsTests.xctest"
                BlueprintName = "MapsTests"
                ReferencedContainer = "container:Maps.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "27017E581AC1C283005AC0B2"
+               BlueprintIdentifier = "27DE38A61AC1C72A001ABB01"
                BuildableName = "MapsTests.xctest"
                BlueprintName = "MapsTests"
                ReferencedContainer = "container:Maps.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "27017E431AC1C283005AC0B2"
+            BlueprintIdentifier = "27DE38911AC1C72A001ABB01"
             BuildableName = "Maps.app"
             BlueprintName = "Maps"
             ReferencedContainer = "container:Maps.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "27017E431AC1C283005AC0B2"
+            BlueprintIdentifier = "27DE38911AC1C72A001ABB01"
             BuildableName = "Maps.app"
             BlueprintName = "Maps"
             ReferencedContainer = "container:Maps.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "27017E431AC1C283005AC0B2"
+            BlueprintIdentifier = "27DE38911AC1C72A001ABB01"
             BuildableName = "Maps.app"
             BlueprintName = "Maps"
             ReferencedContainer = "container:Maps.xcodeproj">
